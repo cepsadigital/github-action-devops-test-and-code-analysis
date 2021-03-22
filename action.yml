@@ -31,7 +31,7 @@ runs:
       pylint -r y -s y -f json --exit-zero ${{ inputs.bandit-lint-source-code }} --exit-zero > reports/pylint.json
       bandit -r ${{ inputs.bandit-lint-source-code }} -f json -o reports/bandit.json || true
   - name: SonarQube Scan
-    uses: cepsadigital/devops-sonar-github-action@master
+    uses: cepsadigital/devops-sonarqube-scan@master
     with:
       host: ${{ secrets.TD_SONAR_HOST }}
       login: ${{ secrets.TD_SONAR_USER }}
