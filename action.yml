@@ -22,7 +22,7 @@ runs:
     run: |
       bandit -r ${{ inputs.source-code-folder-name }} -f json -o reports/bandit.json || true
     shell: bash
-  - name: run-pylint
-    id: |
+  - id: run-pylint
+    run: |
       pylint ${{ inputs.source-code-folder-name }} -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" --exit-zero > pylint.out
     shell: bash
