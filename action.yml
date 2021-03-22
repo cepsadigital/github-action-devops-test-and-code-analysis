@@ -8,20 +8,21 @@ inputs:
 runs:
   using: "composite"
   steps:
-  - id: Install dependencies
+  - id: install-dependencies
     run: |
       python -m pip install --upgrade pip
       mkdir -p reports
-      pip install tox pylint bandit     
-  - id: Runt tests with Tox
+      pip install tox pylint bandit
+    shell: bash
+  - id: runt-tests-with-tox
     run: |      
       tox
     shell: bash
-  - id: Run bandit
+  - id: run-bandit
     run: |
       bandit -r ${{ inputs.source-code-folder-name }} -f json -o reports/bandit.json || true
     shell: bash
-  - name: Run pylint
+  - name: run-pylint
     id: |
       pylint ${{ inputs.source-code-folder-name }} -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" --exit-zero > pylint.out
     shell: bash
