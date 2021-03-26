@@ -3,8 +3,7 @@ description: 'GitHub Composite Action to Run Tests and Code Analysis'
 inputs:
   source-code-folder-name:
     description: 'pylint and Bandit Analysis Source code base path'
-    required: true
-    default: 'src'  
+    required: true 
 runs:
   using: "composite"
   steps:
