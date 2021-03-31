@@ -1,4 +1,4 @@
-# Run Tests and Code Analysis GitHub Action - 1.0.0
+# Run Tests and Code Analysis GitHub Action  1.0.0
 
 The `github-action-devops-test-and-code-analysis` Github Action will run your tests with tox and generate coverage, pylint and bandit reports.
 
