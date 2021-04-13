@@ -1,6 +1,6 @@
 # Run Tests and Code Analysis GitHub Action  1.0.0
 
-The `github-action-devops-test-and-code-analysis` Github Action will run your tests with tox and generate coverage, pylint and bandit reports.
+The `github-action-devops-python-testing` Github Action will run your tests with **Tox and generate coverage, pylint and bandit reports.**
 
 ## Inputs
 
@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run Tests and Code Analysis
-      uses: cepsadigital/github-action-devops-test-and-code-analysis@1.0.0
+      uses: cepsadigital/github-action-devops-python-testing@1.0.0
       with:
         source-code-folder-name: 'src'
 ```
