@@ -1,4 +1,4 @@
-# Run Tests and Code Analysis GitHub Action  1.0.0
+# Run Python Testing GitHub Action  1.0.0
 
 The `github-action-devops-python-testing` Github Action will run your tests with **Tox and generate coverage, pylint and bandit reports.**
 
