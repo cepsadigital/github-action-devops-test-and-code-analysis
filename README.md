@@ -14,7 +14,7 @@ The `github-action-devops-python-testing` Github Action will run your tests with
 
 ## Components versions:
 
-- Tox: 3.X.X (latest)
+- Tox: `3.X.X (latest)`
 - pylint: 2.X.X (latest)
 - bandit: 1.X.X (latest)
 
