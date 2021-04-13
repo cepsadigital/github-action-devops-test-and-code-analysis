@@ -30,7 +30,7 @@ jobs:
 
 ## Components versions used:
 
-- Tox: `3.X.X (latest)`
+- tox: `3.X.X (latest)`
 - pylint: `2.X.X (latest)`
 - bandit: `1.X.X (latest)`
 
