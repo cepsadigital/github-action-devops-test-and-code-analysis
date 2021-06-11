@@ -1,4 +1,4 @@
-# Run Python Tests and Code Analysis GitHub Action  1.0.0
+# Run Python Tests and Code Analysis GitHub Action  2.0.0
 
 The `github-action-devops-python-testing` Github Action will run your tests with **Tox and generate coverage, pylint and bandit reports.**
 The input variables: `artifactory-user`, `artifactory-psw`, `artifactory-host` are mandatory when you need to install private libraries from Artifactory in tests. 
@@ -14,7 +14,7 @@ The input variables: `artifactory-user`, `artifactory-psw`, `artifactory-host` a
 
 ## Requirements
 
-* `tox.ini` file must exist in the root of the project. ([example](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-instalando-nuestras-))
+* `tox.ini` file must exist in the root of the project. ([tox.ini example](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-instalando-nuestras-))
 
 ## Usage
 
