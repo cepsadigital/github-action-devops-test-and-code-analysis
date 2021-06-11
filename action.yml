@@ -21,8 +21,10 @@ runs:
       pip install "tox>=3,<4" "pylint>=2,<3" "bandit>=1,<2"
     shell: bash
   - id: runt-tests-with-tox
-    run: |      
-      tox
+    run: tox
+    env:
+      TD_ARTIFACTORY_USER: ${{ inputs.artifactory-user }}
+      TD_ARTIFACTORY_PSW: ${{ inputs.artifactory-psw }}
     shell: bash
   - id: run-bandit
     run: |
