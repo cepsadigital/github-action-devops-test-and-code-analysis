@@ -1,7 +1,7 @@
 # Run Python Tests and Code Analysis GitHub Action  2.0.0
 
-The `github-action-devops-python-testing` Github Action will run your tests with **Tox and generate coverage, pylint and bandit reports.**
-The input variables: `artifactory-user`, `artifactory-psw` and `artifactory-host` are mandatory when you need to install private libraries from Artifactory in tests. 
+The `github-action-devops-python-testing` Github Action will run your tests with **Tox and generate coverage, pylint and bandit reports.**  
+The input variables: `artifactory-user`and `artifactory-psw` are mandatory when you need to install private libraries from Artifactory in tests. 
 
 ## Inputs
 
@@ -15,7 +15,7 @@ The input variables: `artifactory-user`, `artifactory-psw` and `artifactory-host
 
 * `tox.ini` file must exist in the roor of the project ([Testing Documentation](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-instalando-nuestras-))
 
-*Example:
+*Example:*
 ```
 [tox]
 envlist = py3
@@ -23,8 +23,8 @@ skipsdist = True
 
 [testenv]
 setenv = 
-	AWS_DEFAULT_REGION=eu-west-1 
-	PIP_EXTRA_INDEX_URL=https://${INPUT_ARTIFACTORY-USER}:${INPUT_ARTIFACTORY-PSW}@cepsa.jfrog.io/artifactory/api/pypi/td-pypi/simple
+     AWS_DEFAULT_REGION=eu-west-1 
+     PIP_EXTRA_INDEX_URL=https://${INPUT_ARTIFACTORY-USER}:${INPUT_ARTIFACTORY-PSW}@cepsa.jfrog.io/artifactory/api/pypi/td-pypi/simple
 
 deps =
     -r{toxinidir}/requirements.txt
@@ -75,7 +75,6 @@ jobs:
         source-code-folder-name: 'src'
         artifactory-user: ${{ secrets.TD_ARTIFACTORY_USER }}
         artifactory-psw: ${{ secrets.TD_ARTIFACTORY_PSW }}
-        artifactory-host: https://example.example.xxx
 ```
 ## Secrets
 
