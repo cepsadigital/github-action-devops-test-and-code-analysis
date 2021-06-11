@@ -10,9 +10,7 @@ inputs:
   artifactory-psw:
     description: 'Artifactory Password'
     required: false
-  artifactory-host:
-    description: 'Artifactory Host'
-    required: false
+
 runs:
   using: "composite"
   steps:
