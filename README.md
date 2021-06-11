@@ -78,8 +78,8 @@ jobs:
 ```
 ## Secrets
 
-- `TD_ARTIFACTORY_USER` - **_(Required)_** this is the Cepsa Artifactory user.
-- `TD_ARTIFACTORY_PSW` - **_(Required)_** this is the Cepsa Artifactory password.
+- `TD_ARTIFACTORY_USER` - This is the Cepsa Artifactory user.
+- `TD_ARTIFACTORY_PSW` - This is the Cepsa Artifactory password.
 
 ## Components versions used:
 
