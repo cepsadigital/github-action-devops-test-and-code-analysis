@@ -10,11 +10,36 @@ The input variables: `artifactory-user`, `artifactory-psw` and `artifactory-host
 | `source-code-folder-name` | Pylint and Bandit analysis source code base path | :heavy_check_mark: | |
 | `artifactory-user` | Artifactory username | | |
 | `artifactory-psw` | Artifactory password | | |
-| `artifactory-host` | Artifactory host | | |
 
 ## Requirements
 
-* `tox.ini` file must exist in the root of the project. ([tox.ini example](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-instalando-nuestras-))
+* `tox.ini` file must exist in the roor of the project ([Testing Documentation](https://cloudfirst.cepsacorp.com/books/buenas-pr%C3%A1cticas/page/testing-en-python#bkmrk-instalando-nuestras-))
+
+*Example:
+```
+[tox]
+envlist = py3
+skipsdist = True
+
+[testenv]
+setenv = 
+		AWS_DEFAULT_REGION=eu-west-1 
+		PIP_EXTRA_INDEX_URL=https://${INPUT_ARTIFACTORY-USER}:${INPUT_ARTIFACTORY-PSW}@cepsa.jfrog.io/artifactory/api/pypi/td-pypi/simple
+
+deps =
+    -r{toxinidir}/requirements.txt
+    -r{toxinidir}/test_requirements.txt
+
+commands =
+    pytest  --cov-report xml --junitxml xunit-report.xml --cov src --cov-config=tox.ini
+
+[pytest]
+testpaths = tests
+junit_family = xunit1
+
+[run]
+relative_files = True
+```
 
 ## Usage
 
